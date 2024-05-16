@@ -4,7 +4,7 @@ import FreindProfileChatBar from "../Components/FreindProfileChatBar";
 import Messages from "../Components/Messages";
 import SendMessage from "../Components/SendMessage";
 import { useSelector } from "react-redux";
-import { getData } from "../APICALLS";
+import { getData, submitData } from "../APICALLS";
 import { io } from "socket.io-client";
 
 const ChatPage = () => {
@@ -41,6 +41,18 @@ const ChatPage = () => {
         createdAt: Date.now(),
       });
     });
+
+    socket.current.on("updateMessageSeen",(data)=>{
+      console.log(data)
+      let updatedMessages = messages.map(message => {
+        if (message.conversationId === data.conversationId && message.sender === data.sender) {
+          return { ...message, seen: true }; 
+        } else {
+          return message; 
+        }
+      });
+      setMessages(updatedMessages)
+    })
   }, []);
 
   useEffect(() => {
@@ -70,11 +82,22 @@ const ChatPage = () => {
   }, []);
 
   useEffect(() => {
-    currentChat &&
-      getData("chat/messages/" + currentChat._id).then((data) => {
-        setMessages(data.messageList);
-      });
-  }, [currentChat]);
+    if(currentChat){
+    getData("chat/messages/" + currentChat._id).then((data) => {
+      setMessages(data.messageList);
+    });
+    const freindId =currentChat.members.find((m) => m !== currentUser.user._id);
+    submitData("chat/messages/update-seen","PUT",{
+    conversationId:currentChat._id,
+    sender:freindId
+    })
+
+    socket.current.emit("messageSeen",{
+      conversationId:currentChat._id,
+      sender:freindId
+    })
+  }
+}, [currentChat]);
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
