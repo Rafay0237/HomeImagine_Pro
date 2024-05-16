@@ -33,6 +33,14 @@ const ChatPage = () => {
         createdAt: Date.now(),
       });
     });
+
+    socket.current.on("getImage", (data) => {
+      setArrivalMessage({
+        sender: data.senderId,
+        img: data.img,
+        createdAt: Date.now(),
+      });
+    });
   }, []);
 
   useEffect(() => {
@@ -73,7 +81,7 @@ const ChatPage = () => {
   }, [messages]);
 
   return (
-    <div className="flex h-[calc(100vh-60px)]">
+    <div className="flex h-[calc(100vh-60px)] ">
       <div
         className={`${
           currentChat ? " hidden sm:block" : "sm:w-1/3 w-full mx-auto sm:mx-0"
@@ -121,7 +129,9 @@ const ChatPage = () => {
           )}
         </div>
         {currentChat && (
-          <SendMessage currentChat={currentChat} setMessages={setMessages} />
+          <SendMessage currentChat={currentChat} 
+          setMessages={setMessages} 
+          socket={socket}/>
         )}
       </div>
     </div>
