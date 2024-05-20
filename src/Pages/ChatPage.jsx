@@ -133,9 +133,10 @@ const ChatPage = () => {
           {currentChat && <FreindProfileChatBar onlineUsers={onlineUsers}
           currentChat={currentChat} 
           userId={currentUser.user._id}/>}
+          <div  className="pt-[60px]">
           {messages &&
             messages.map((m) => (
-              <div className="pt-[60px]"
+              <div
                ref={scrollRef} key={m._id}>
                 <Messages
                   own={m.sender === currentUser.user._id}
@@ -145,6 +146,7 @@ const ChatPage = () => {
                 />
               </div>
             ))}
+          </div>
           {!currentChat && (
             <p className="p-5 text-dark-grey lg:text-3xl md:text-2xl sm:text-xl">
               Open Conversation to Start a Chat

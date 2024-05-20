@@ -10,7 +10,7 @@ let messageTextOwn =
 
 const Messages = ({ own, message, freindDp, userDp }) => {
   return (
-    <div className="m-2  ">
+    <div className="m-2">
       <div className={"flex p-2  " + (own ? "justify-end" : "")}>
         <img
           src={own ? userDp : freindDp}
