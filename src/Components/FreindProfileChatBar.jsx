@@ -8,14 +8,15 @@ const FreindProfileChatBar = ({onlineUsers, currentChat,userId}) => {
   const [freind,setFreind]=useState(null)
 
 
-    useEffect(()=>{
-        let freindId=currentChat.members.find(id=>id!==userId)
-      onlineUsers?.some(user=>user.userId===freindId) && setOnline(true)
+  useEffect(()=>{
+      let freindId=currentChat.members.find(id=>id!==userId)
+    onlineUsers?.some(user=>user.userId===freindId) && setOnline(true)
 
       getData("pro/get-chatBarData/"+freindId).then(data=>{
         setFreind(data)
       })
-    },[currentChat])
+
+  },[currentChat])
 
     
   return (
@@ -40,8 +41,8 @@ const FreindProfileChatBar = ({onlineUsers, currentChat,userId}) => {
      </div>
      </div>
 
-     <div  >
-      <ChatBarDropdown conversationId={currentChat._id}/>
+     <div>
+      <ChatBarDropdown conversationId={currentChat._id} freindId={freind?.freindId}/>
      </div>
  </div>
     </div>

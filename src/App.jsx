@@ -9,6 +9,9 @@ import ChangePassword from"./Pages/ChangePassword"
 import ChangeUsername from "./Pages/ChangeUsername";
 import ChatPage from "./Pages/ChatPage";
 import ProposalsPage from "./Pages/ProposalsPage";
+import CreateContract from "./Pages/CreateContract";
+import ViewContractPage from "./Pages/ViewContractPage"
+import ContractPage from "./Pages/ContractPage";
 
 import PrivateRoute from "./Components/PrivateRoute";
 import { Toaster } from 'react-hot-toast';
@@ -32,6 +35,9 @@ const App = () => {
         <Route path="/build-profile" element={<BuildProfile/>} />
         <Route path="/chats" element={<ChatPage />} />
         <Route path="/proposals" element={<ProposalsPage />} />
+        <Route path="/contract" element={<ContractPage />} />
+        <Route path="/contract/create/:id" element={<CreateContract />} />
+        <Route path="/contract/:id" element={<ViewContractPage />} />
         </Route>
     </Routes>
     </BrowserRouter>

@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form";
 
 const Updateprofile = ({ submitProfileData ,profile,btnName}) => {
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({defaultValues:profile});
+
   return (
     <div>
       <form onSubmit={handleSubmit(submitProfileData)}>
@@ -132,8 +134,6 @@ const Updateprofile = ({ submitProfileData ,profile,btnName}) => {
           />
 
         </div>
-        
-
 
         <label className="text-base text-[#33334D] ">
           Certification and Awards (optional)
@@ -145,7 +145,6 @@ const Updateprofile = ({ submitProfileData ,profile,btnName}) => {
           {...register("awards", { max: [100, "Too Long Description"] })}
         ></textarea>
 
-        {/*  */}
         <p className="text-[32px] font-[400] text-[#333333] my-2 mb-4">
           Services
         </p>
@@ -169,7 +168,7 @@ const Updateprofile = ({ submitProfileData ,profile,btnName}) => {
           rows="2"
           {...register("areasServiced", { max: [100, "Too Long Description"] })}
         ></textarea>
-        {/*  */}
+        
         <p className="text-[32px] font-[400] text-[#333333]  my-2 mb-4">
           Typical Job Cost
         </p>

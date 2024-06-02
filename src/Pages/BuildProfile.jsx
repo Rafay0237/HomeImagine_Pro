@@ -3,23 +3,12 @@ import {  useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {updateBusisnessProfile} from "../redux/user/userSlice"
 import toast from 'react-hot-toast';
+import { submitData } from "../APICALLS";
 
 export default function BuildProfile() {
  const {currentUser,businessProfile} =useSelector(state=>state.user)
  const navigate = useNavigate();
  const dispatch=useDispatch();
-
-  async function postData(url = "", data = {},method="") {
-    const res = await fetch(url, {
-      method,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    const resData=await res.json()
-    return resData
-  }
 
 
   const submitProfileData = (data) => {
@@ -32,17 +21,11 @@ export default function BuildProfile() {
       let temp= {...data,userId,logo}
       data=temp
     }
-
-    try{
-    postData(import.meta.env.VITE_APP_API_URL+"pro/"+endPoint, data,
-    method).then((resData) => {
+    submitData("pro/"+endPoint,method,data).then((resData) => {
       dispatch(updateBusisnessProfile(resData))
       toast.success(businessProfile?'Updated Profile':'Profile Created!');
       navigate("/")
     });
-  }catch(error){
-    console.log(error)
-  }
   };
 
   return (

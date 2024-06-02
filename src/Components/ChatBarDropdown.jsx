@@ -3,9 +3,10 @@ import { Menu, Transition } from '@headlessui/react'
 import { HiDotsVertical } from "react-icons/hi";
 import {deleteData} from "../APICALLS"
 import {toast} from "react-hot-toast"
+import {Link} from "react-router-dom"
 
 
-export default function ChatBarDropdown({conversationId}) {
+const ChatBarDropdown=({conversationId,freindId})=> {
 
   const handleClearChat=async()=>{
     deleteData("chat/messages/"+conversationId).then((data)=>{
@@ -51,9 +52,11 @@ export default function ChatBarDropdown({conversationId}) {
           <div className="py-1">
 
             <Menu.Item >
+              <Link to={"/contract/create/"+freindId}>
                 <p className='text-dark-grey font-semibold block px-4 py-2 text-sm hover:bg-grey'>
-                Start Contract
+                Make a Contract
                 </p>
+              </Link>
             </Menu.Item>
             <Menu.Item onClick={handleClearChat}>
                 <p className='text-dark-grey  font-semibold block px-4 py-2 text-sm hover:bg-grey'>
@@ -73,3 +76,5 @@ export default function ChatBarDropdown({conversationId}) {
     </Menu>
   )
 }
+
+export default ChatBarDropdown
