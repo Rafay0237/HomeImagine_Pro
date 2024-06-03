@@ -21,7 +21,7 @@ const Navbar = () => {
         
         <div className="flex gap-10 sm:gap-16 items-center">
 
-        <Link to="/" className="">
+        <Link to="/contract" >
             <div>
           <FaFileContract className="text-2xl mx-auto" />
           <p className="text-sm">Contracts</p>
