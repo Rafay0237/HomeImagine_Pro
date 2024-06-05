@@ -12,6 +12,8 @@ import ProposalsPage from "./Pages/ProposalsPage";
 import CreateContract from "./Pages/CreateContract";
 import ViewContractPage from "./Pages/ViewContractPage"
 import ContractPage from "./Pages/ContractPage";
+import EarningsPage from "./Pages/EarningsPage";
+import ProjectPost from "./Pages/ProjectPost";
 
 import PrivateRoute from "./Components/PrivateRoute";
 import { Toaster } from 'react-hot-toast';
@@ -38,6 +40,8 @@ const App = () => {
         <Route path="/contract" element={<ContractPage />} />
         <Route path="/contract/create/:id" element={<CreateContract />} />
         <Route path="/contract/:id" element={<ViewContractPage />} />
+        <Route path="/earnings" element={<EarningsPage />} />
+        <Route path="/project/post" element={<ProjectPost />} />
         </Route>
     </Routes>
     </BrowserRouter>

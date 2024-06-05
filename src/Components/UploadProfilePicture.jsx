@@ -20,7 +20,7 @@ const UploadProfilePicture = ({user}) => {
         const formData=new FormData();
         formData.append('image',image)
         formData.append('id',user._id)
-        const res =await fetch('http://localhost:5000/'+'upload-img/dp',{
+        const res =await fetch(import.meta.env.VITE_APP_API_URL+'upload-img/dp',{
           method:"POST",
          body:formData
         })

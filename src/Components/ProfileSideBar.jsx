@@ -26,11 +26,14 @@ const ProfileSideBar = () => {
     <p >Edit Buisness Profile</p>
       </div>
     </Link>
-    <Link to="/">
+    <Link to="/earnings">
     <p className=' hover:text-green hover:cursor-pointer'>Earnings</p>
     </Link>
-    <Link to="/">
+    <Link to="/contract">
     <p className=' hover:text-green hover:cursor-pointer'>Contracts</p>
+    </Link>
+    <Link to="/project/post">
+    <p className=' hover:text-green hover:cursor-pointer'>Add Project</p>
     </Link>
 
     </div>
