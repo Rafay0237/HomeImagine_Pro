@@ -12,7 +12,6 @@ const EarningsPage = () => {
    useEffect(() => {
     setLoading(true);
     getData("contract/payment-history-pro/" + currentUser.user._id).then((data) => {
-      console.log(data)
       if (data.success) {
         setPayments(data.payments);
       }

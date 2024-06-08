@@ -33,20 +33,24 @@ const ProfilePage = () => {
         </div>
 
         <div className="flex gap-10 mt-10 ">
+          <Link to="/contract">
           <p
             className="text-dark-grey font-lightbold border-b-2 border-white 
-     hover:border-b-2 hover:border-black hover:cursor-pointer"
-          >
+            hover:border-b-2 hover:border-black hover:cursor-pointer"
+            >
             Ideabooks
           </p>
+            </Link>
           <Link to="/chat">
             <p className="text-dark-grey font-lightbold hover:border-b-2 border-black hover:cursor-pointer">
               Messages
             </p>
           </Link>
+          <Link to="/earnings">
           <p className="text-dark-grey font-lightbold hover:border-b-2 border-black hover:cursor-pointer">
-            Orders
+            Earnings
           </p>
+          </Link>
         </div>
 
         <div className="flex mt-12 mb-32 gap-8 md:gap-0">

@@ -21,7 +21,7 @@ const PaymentHistory = () => {
 
   if (loading)
     return (
-      <div className="flex h-60 justify-center items-center text-2xl font-lightbold">
+      <div className="flex min-h-[70vh] justify-center items-center text-2xl font-lightbold">
         Loading...
       </div>
     );

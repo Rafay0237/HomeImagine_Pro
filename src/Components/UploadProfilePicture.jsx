@@ -3,6 +3,7 @@ import {
   updateProfilePicture
 } from "../redux/user/userSlice";
 import {useDispatch} from "react-redux"
+import { IoIosAddCircle } from "react-icons/io";
 
 const UploadProfilePicture = ({user}) => {
   const dispatch=useDispatch()
@@ -53,9 +54,9 @@ useEffect(()=>{
           src={user.profilePicture}
           alt="Profile " onClick={()=>fileRef.current.click()}
         />
-        <p onClick={()=>fileRef.current.click()}
-        className="absolute md:right-3 md:bottom-3 right-1 bottom-1 rounded-full h-6 w-6 cursor-pointer
-         bg-green text-white  text-2xl flex justify-center items-center">+</p>
+        <IoIosAddCircle onClick={()=>fileRef.current.click()}
+        className="absolute md:right-3 md:bottom-3 right-1 bottom-1 rounded-full h-5 w-5 sm:h-7 sm:w-7 cursor-pointer
+          text-green  text-2xl flex justify-center items-center"/>
         </div>
         <div className="text-center mt-2">
         {loading?<p  className="text-dark-grey font font-semibold">loading...</p>:""}

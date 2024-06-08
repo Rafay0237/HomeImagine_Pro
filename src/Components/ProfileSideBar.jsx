@@ -21,9 +21,21 @@ const ProfileSideBar = () => {
     <p className='font-lightbold mb-3'>Buisness Account</p>
 
     <Link to="/build-profile">
-      <div className='flex hover:text-green hover:cursor-pointer '>
-    <FaPen className='h-3 w-3 m-1.5 mx-2'/>
+      <div className='flex hover:text-green hover:cursor-pointer items-center gap-3 '>
+    <FaPen className='h-3 w-3 '/>
     <p >Edit Buisness Profile</p>
+      </div>
+    </Link>
+    <Link to="/project/post">
+    <div className='flex hover:text-green hover:cursor-pointer items-center gap-2 '>
+    <p className='text-2xl -mt-1'>+</p>
+    <p >Add Project</p>
+      </div>
+    </Link>
+    <Link to="/profile/slider-img-post">
+    <div className='flex hover:text-green items-center gap-2 hover:cursor-pointer '>
+    <FaPen className='h-3 w-3 '/>
+    <p >Add Background Images</p>
       </div>
     </Link>
     <Link to="/earnings">
@@ -31,9 +43,6 @@ const ProfileSideBar = () => {
     </Link>
     <Link to="/contract">
     <p className=' hover:text-green hover:cursor-pointer'>Contracts</p>
-    </Link>
-    <Link to="/project/post">
-    <p className=' hover:text-green hover:cursor-pointer'>Add Project</p>
     </Link>
 
     </div>
