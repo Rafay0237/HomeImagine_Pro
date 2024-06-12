@@ -28,7 +28,7 @@ const Navbar = () => {
             </div>
         </Link>
 
-        <Link to="/" className="">
+        <Link to="/notifications" className="">
             <div>
           <FaBell className="text-2xl mx-auto" />
           <p className="text-sm">Alerts</p>

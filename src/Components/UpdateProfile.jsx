@@ -152,6 +152,7 @@ const Updateprofile = ({ submitProfileData ,profile,btnName}) => {
         <label className="text-base text-[#33334D] ">
           Services Provided (optional)
         </label>
+
         <textarea
         placeholder={profile?.services}
           className="border-[#CCCCCC] border rounded-sm p-1.5 px-3 w-full my-2"
@@ -168,6 +169,19 @@ const Updateprofile = ({ submitProfileData ,profile,btnName}) => {
           rows="2"
           {...register("areasServiced", { max: [100, "Too Long Description"] })}
         ></textarea>
+
+        <label className="text-base text-[#33334D] ">
+          Category for your  Services 
+        </label>
+
+        <select className="border-[#CCCCCC] border rounded-sm p-2 px-3 w-full my-2 "
+        {...register("category")}>
+        {options.map((option, index) => (
+          <option key={index} value={option.title} className="border-[#CCCCCC] border rounded-sm p-2 ">
+            {option.title}
+          </option>
+        ))}
+      </select>
         
         <p className="text-[32px] font-[400] text-[#333333]  my-2 mb-4">
           Typical Job Cost
@@ -231,4 +245,34 @@ const Updateprofile = ({ submitProfileData ,profile,btnName}) => {
   );
 };
 
+
+let options = [
+  {
+    title: "Bathroom Remodeling",
+  },
+  {
+    title: "Home Remodeling",
+  },
+  {
+    title: "Kitchen Remodeling",
+  },
+  {
+    title: "General Contracting",
+  },
+  {
+    title: "New Home Construction",
+  },
+  {
+    title: "Interior Design",
+  },
+  {
+    title: "Home Addition",
+  },
+  {
+    title: "Deck Building",
+  },
+  {
+    title: "Landscape Design",
+  },
+];
 export default Updateprofile;

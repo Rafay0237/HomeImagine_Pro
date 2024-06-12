@@ -55,7 +55,7 @@ const Slider = ({images,setSliderImages}) => {
       onClick={()=>currentImage===images.length-1?setCurrentImage(0):setCurrentImage(currentImage+1)}
       ><GrFormNext className='text-3xl text-dark-grey'/></button>
 
-      <MdDelete className='absolute h-10 w-10 top-[26%] lg:top-0 -right-2 md:right-0 text-red-700 hover:opacity-90 hover:cursor-pointer'
+      <MdDelete className='absolute h-10 w-10 top-[26%] lg:top-0 -right-2 md:right-0 hover:text-red-700 hover:opacity-90 hover:cursor-pointer'
       onClick={handleDeleteImg}/>
 
       </div>

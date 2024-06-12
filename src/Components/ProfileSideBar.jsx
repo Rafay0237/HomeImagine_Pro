@@ -4,7 +4,7 @@ import { FaPen } from "react-icons/fa";
 
 const ProfileSideBar = () => {
   return (
-    <div className='flex-col w-[25%] px-5 gap-3 mt-2 md:flex hidden text-base'>
+    <div className='flex flex-col  px-5 gap-3 mt-2  text-base'>
 
     <p className='font-lightbold mb-3'>Personal Account</p>
 
