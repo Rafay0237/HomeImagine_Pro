@@ -55,8 +55,8 @@ useEffect(()=>{
           alt="Profile " onClick={()=>fileRef.current.click()}
         />
         <IoIosAddCircle onClick={()=>fileRef.current.click()}
-        className="absolute md:right-3 md:bottom-3 right-1 bottom-1 rounded-full h-5 w-5 sm:h-7 sm:w-7 cursor-pointer
-          text-green  text-2xl flex justify-center items-center"/>
+        className="absolute md:right-3 md:bottom-3 right-1 lg:right-0 bottom-1 rounded-full h-5 w-5 sm:h-7 sm:w-7 cursor-pointer
+          text-green  text-2xl bg-white"/>
         </div>
         <div className="text-center mt-2">
         {loading?<p  className="text-dark-grey font font-semibold">loading...</p>:""}

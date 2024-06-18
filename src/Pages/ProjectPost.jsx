@@ -1,20 +1,20 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { RiImageAddFill } from "react-icons/ri";
+import PhotoUpload from "../Components/PhotoUpload";
 
 const ProjectPost = () => {
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
   const [image, setImage] = useState(undefined);
+  const [imagePreview, setImagePreview] = useState(undefined);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     location: "",
     desc: ""
   });
-  const fileRef = useRef();
 
   const handleSendProjectData = async () => {
     if (!formData.name || !formData.location || !formData.desc) {
@@ -100,21 +100,19 @@ const ProjectPost = () => {
           ></textarea>
         </div>
         <div className="Image upload here">
-          <label className="text-base text-[#33334D] ">
+          <label className="text-base text-[#33334D] mb-1">
             Add a Project Photo here
           </label>
-          <input
-            type="file"
-            ref={fileRef}
-            hidden
-            onChange={(e) => setImage(e.target.files[0])}
-          ></input>
-          <div className="relative ">
-            <RiImageAddFill
-              className="h-20 w-20  md:h-32 md:w-32  cursor-pointer "
-              onClick={() => fileRef.current.click()}
-            />
-          </div>
+          <PhotoUpload
+          setImage={setImage}
+          setImagePreview={setImagePreview}
+          />
+          {imagePreview && 
+          <img className="h-[100px] w-[100px] object-contain rounded-lg mt-3"
+          src={imagePreview}
+          alt="Your Project Here"
+          />
+          }
         </div>
         <button
           className=" bg-green text-white  hover:bg-dark-green

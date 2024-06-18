@@ -45,7 +45,7 @@ const Slider = ({images,setSliderImages}) => {
 
       {images?.map(img=>(
           <img 
-          className={'object-contain w-[90%] h-[55vh] mx-auto rounded-md shadow-lg'
+          className={'object-contain w-[90%]  mx-auto rounded-md shadow-lg'
           +(images[currentImage]!=img&&" hidden")}
           src={img} alt='Project Wallparers'
           key={img} />
@@ -55,7 +55,7 @@ const Slider = ({images,setSliderImages}) => {
       onClick={()=>currentImage===images.length-1?setCurrentImage(0):setCurrentImage(currentImage+1)}
       ><GrFormNext className='text-3xl text-dark-grey'/></button>
 
-      <MdDelete className='absolute h-10 w-10 top-[26%] lg:top-0 -right-2 md:right-0 hover:text-red-700 hover:opacity-90 hover:cursor-pointer'
+      <MdDelete className='absolute h-8 w-8 xs:h-10 xs:w-10 top-0 -right-2 md:right-0 hover:text-red-700 hover:opacity-90 hover:cursor-pointer'
       onClick={handleDeleteImg}/>
 
       </div>
