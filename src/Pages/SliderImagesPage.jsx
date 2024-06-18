@@ -58,7 +58,7 @@ const SliderImagePage = () => {
   
   return (
     <div>
-      <div className="w-full md:w-[70%]  ">
+      <div className="w-full md:w-[70%]  pb-10">
         <p className='text-3xl font-lightbold pl-10 pt-3'>Current Slider Images: </p>
         {sliderImages ?
           <Slider images={sliderImages} setSliderImages={setSliderImages}/>

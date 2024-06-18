@@ -64,7 +64,7 @@ const DynamicDiv=({data})=>{
       <p className="text-2xl font-lightbold">{data.header}</p>
       <p className="text-xl ">{data.text}</p>
       <Link to={data.link}>
-      <button className="w-[70%] sm:w-[50%] p-3 px-6 bg-black text-xl text-white font-lightbold rounded-[4px] hover:opacity-95">
+      <button className="w-full xs:w-[70%] sm:w-[50%] p-3 px-6 bg-black text-xl text-white font-lightbold rounded-[4px] hover:opacity-95">
       {data.btnText}
       </button>
       </Link>
