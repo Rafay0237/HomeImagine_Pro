@@ -58,13 +58,14 @@ useEffect(()=>{
         className="absolute md:right-3 md:bottom-3 right-1 lg:right-0 bottom-1 rounded-full h-5 w-5 sm:h-7 sm:w-7 cursor-pointer
           text-green  text-2xl bg-white"/>
         </div>
-        <div className="text-center mt-2">
-        {loading?<p  className="text-dark-grey font font-semibold">loading...</p>:""}
-        {imageError.success ? (
-          <p className="text-green ">{imageError.message}</p>
-        ) : (
-          <p className="text-red-700 ">{imageError.message}</p>
-        )}
+        <div className="text-center mt-2  w-20 md:w-32 ">
+          {loading ? (
+            <p className="text-dark-grey font font-semibold">loading...</p>
+          ) : imageError.success ? (
+            <p className="text-green text-sm sm:text-base">{imageError.message}</p>
+          ) : (
+            <p className="text-red-700 text-sm sm:text-base">{imageError.message}</p>
+          )}
         </div>
         </div>
     </>

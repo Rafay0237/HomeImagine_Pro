@@ -1,4 +1,4 @@
-import {useEffect,useState,useRef} from 'react'
+import {useEffect,useState} from 'react'
 import {getData} from "../APICALLS"
 import {useSelector} from "react-redux"
 import Slider from '../Components/Slider'

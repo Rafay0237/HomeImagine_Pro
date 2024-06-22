@@ -26,10 +26,10 @@ const ProfileSideBar = () => {
     <p >Edit Buisness Profile</p>
       </div>
     </Link>
-    <Link to="/project/post">
+    <Link to="/project/edit">
     <div className='flex hover:text-green hover:cursor-pointer items-center gap-2 '>
-    <p className='text-2xl -mt-1'>+</p>
-    <p >Add Project</p>
+    <FaPen className='h-3 w-3 '/>
+    <p >Edit Project</p>
       </div>
     </Link>
     <Link to="/profile/slider-img-post">

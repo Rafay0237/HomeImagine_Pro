@@ -16,6 +16,7 @@ import EarningsPage from "./Pages/EarningsPage";
 import ProjectPost from "./Pages/ProjectPost";
 import SliderImagePage from "./Pages/SliderImagesPage";
 import NotificationsPage from "./Pages/NotificationsPage";
+import EditProject from "./Pages/EditProject";
 
 import PrivateRoute from "./Components/PrivateRoute";
 import { Toaster } from 'react-hot-toast';
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/contract/:id" element={<ViewContractPage />} />
         <Route path="/earnings" element={<EarningsPage />} />
         <Route path="/project/post" element={<ProjectPost />} />
+        <Route path="/project/edit" element={<EditProject />} />
         <Route path="/profile/slider-img-post" element={<SliderImagePage />} />
         </Route>
     </Routes>
