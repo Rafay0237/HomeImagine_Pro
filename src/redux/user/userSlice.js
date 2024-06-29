@@ -4,7 +4,8 @@ const initialState = {
   error: false,
   loading: false,
   currentUser: null,
-  businessProfile:null
+  businessProfile:null,
+  notifications:0,
 };
 
 const userSlice = createSlice({
@@ -49,6 +50,10 @@ const userSlice = createSlice({
     updateBusisnessProfile:(state,action)=>{
       state.businessProfile=action.payload;
     },
+    updateNotifications:(state,action)=>{
+      console.log(action.payload)
+      state.notifications=action.payload;
+    },
   },
 });
 
@@ -63,7 +68,8 @@ export const {
   signOut,
   updateProfilePicture,
   addBusisnessProfile,
-  updateBusisnessProfile
+  updateBusisnessProfile,
+  updateNotifications
 } = userSlice.actions;
 
 export default userSlice.reducer;

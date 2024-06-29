@@ -26,12 +26,12 @@ const ProposalsCard = ({ proposal,removeProposal }) => {
 
 
   return (
-    <div className="p-8 bg-grey w-[90%] rounded-sm">
+    <div className="p-8 bg-grey w-full sm:w-[90%] rounded-sm">
       <p className="text-base text-green font-semibold ">{proposal.userName}</p>
 
-      <div className="flex gap-4 py-2">
-        <p className="text-base font-lightbold">Email: </p>
-        <p className="text-base ">{proposal.email}</p>
+      <div className="flex flex-col xs:flex-row gap-4 py-2 ">
+        <p className="text-base font-lightbold ">Email: </p>
+        <p className="text-base whitespace-nowrap ">{proposal.email}</p>
       </div>
 
       <div className="flex gap-4">

@@ -58,9 +58,9 @@ export default function Dropdown({img}) {
                 </Link>
             </Menu.Item>
             <Menu.Item>
-                <Link to="/profile">
+                <Link to="/proposals">
                 <p className='text-dark-grey font-semibold block px-4 py-2 text-sm hover:bg-grey'>
-                 Your Ideabooks
+                 Proposals
                 </p>
                 </Link>
             </Menu.Item>

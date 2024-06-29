@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { currentUser } = useSelector((state) => state.user);
+  const { notifications } = useSelector((state) => state.user);
+
   return (
     <div>
       <div className="navbar justify-between">
@@ -29,10 +31,13 @@ const Navbar = () => {
         </Link>
 
         <Link to="/notifications" className="">
-            <div>
+            <div className="flex relative ">
           <FaBell className="text-2xl mx-auto" />
-          <p className="text-sm">Alerts</p>
+          <p className="text-sm pr-2">Alerts</p>
+          {notifications.length!==0&& <p className="absolute w-5 h-5  text-center bg-green text-white rounded-full text-[10px] -top-3 -right-2 pt-[1px] ">
+            {notifications.length}1</p>}
             </div>
+            
         </Link>
 
         <Link to="/chats" className="">
