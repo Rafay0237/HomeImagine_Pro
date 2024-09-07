@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
 
           <Link to="/notifications" className="">
-            <div className="flex relative ">
+            <div className=" relative ">
               <FaBell className="text-2xl mx-auto" />
               <p className="text-sm pr-2">Alerts</p>
               <p
